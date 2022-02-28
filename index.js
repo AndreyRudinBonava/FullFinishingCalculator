@@ -83,7 +83,6 @@ async function start() {
         // })
         await sequelize.sync()
         
-
         // Project.create({name:'Magnifica', short_name:'MG'}).then(proj=>{
         //     proj.createQueue({name:'3 очередь', short_name:'3'}).then(queue1 =>{
         //         queue1.createCorpuse({name:'Корпус F1', short_name:'F1', model_link:'http:/test'}).then(corpus1 => {
