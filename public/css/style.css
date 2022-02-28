@@ -345,3 +345,7 @@ button.room_parameter {
     padding: 0 50px;
     text-align: center;
 }
+
+.auth {
+    padding-top: 100px;
+}

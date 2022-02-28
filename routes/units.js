@@ -1,9 +1,6 @@
 const {Router} = require('express');
 const Proposal = require('../models/proposal');
-const Project = require('../models/projects/project')
 const Corpuse = require('../models/projects/corpuse')
-const Queue = require('../models/projects/queue')
-const Unit = require('../models/projects/unit')
 const router = Router();
 
 router.get('/', (req, res) => {
@@ -26,7 +23,7 @@ router.get('/', (req, res) => {
 
         isStageSelectUnit: true,
 
-        urlPreviousPage: '/corpuses',
+        urlPreviousPage: '/floors',
 
         units
     });

@@ -2,9 +2,8 @@ const {Router} = require('express');
 const Project = require('../models/projects/project')
 const router = Router();
 
-router.get('/', async (req, res) => {
-    // const project = await Project.findByPk(+req.params.project_id)
-    const project = await Project.findByPk(1)
+router.get('/:project_id', async (req, res) => {
+    const project = await Project.findByPk(+req.params.project_id)
     const queues = []
     await project.getQueues()
         .then( res => {

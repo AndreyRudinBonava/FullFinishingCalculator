@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../../utils/database')
+const corpuse = require('./corpuse')
 
 const unit = sequelize.define('Units', {
     id: {
@@ -7,10 +8,6 @@ const unit = sequelize.define('Units', {
         autoIncrement: true,
         allowNull: false,
         type: Sequelize.INTEGER
-    },
-    corpuse_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false
     },
     name: {
         type: Sequelize.STRING,
@@ -22,11 +19,11 @@ const unit = sequelize.define('Units', {
     },
     area_without_balcony: {
         type: Sequelize.DOUBLE,
-        allowNull: false
+        // allowNull: false
     },
     bedrooms_number: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        // allowNull: false
     },
     floor: {
         type: Sequelize.INTEGER,
@@ -34,28 +31,34 @@ const unit = sequelize.define('Units', {
     },
     price: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        // allowNull: false
     },
     discount_price: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        // allowNull: false
     },
     meter_price: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        // allowNull: false
     },
     discount_meter_price: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        // allowNull: false
     },
     bona_lvu_revit_id: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        // allowNull: false
     },
     model_link: {
         type: Sequelize.STRING,
-        allowNull: false
+        // allowNull: false
+    },
+    active: {
+        type: Sequelize.BOOLEAN,
+        // allowNull: false
     }
 })
+
+corpuse.hasMany(unit, { onDelete: "cascade" });
 
 module.exports = unit

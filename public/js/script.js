@@ -4,3 +4,5 @@ document.querySelectorAll('.package_price').forEach( node => {
         style: 'currency'
     }).format(node.textContent)
 })
+
+M.Tabs.init(document.querySelectorAll('.tabs'));

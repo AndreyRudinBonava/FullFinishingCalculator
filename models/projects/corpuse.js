@@ -1,6 +1,7 @@
 // 3Корпусы(stait_case)
 const Sequelize = require('sequelize')
 const sequelize = require('../../utils/database')
+const queue = require('./queue')
 
 const corpuse = sequelize.define('Corpuses', {
     id: {
@@ -8,10 +9,6 @@ const corpuse = sequelize.define('Corpuses', {
         autoIncrement: true,
         allowNull: false,
         type: Sequelize.INTEGER
-    },
-    queue_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false
     },
     name: {
         type: Sequelize.STRING,
@@ -26,5 +23,7 @@ const corpuse = sequelize.define('Corpuses', {
         allowNull: false
     }
 })
+
+queue.hasMany(corpuse, { onDelete: "cascade" });
 
 module.exports = corpuse

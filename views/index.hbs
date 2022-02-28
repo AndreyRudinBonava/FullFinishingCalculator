@@ -1,6 +1,6 @@
 <main>
     <div class="wrapper">
-        {{> search}}
+        {{!-- {{> search}} --}}
         {{#if projects.length}}
             <ul class="projects">
             {{#each projects}}
@@ -21,8 +21,7 @@
                         </div>
                         <div class="line_select line_select_project">
                             <button class="btn_select btn_select_project">
-                                {{!-- <a href="./queues/{{dataValues.id}}"> --}}
-                                <a href="./queues">
+                                <a href="./queues/{{dataValues.id}}">
                                     <svg class="svg_select svg_select_project">
                                         <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
                                     </svg> 
