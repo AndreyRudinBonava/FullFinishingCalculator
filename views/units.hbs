@@ -1,0 +1,49 @@
+<main>
+    <div class="wrapper">
+        {{> search}}
+        {{#if units.length}}
+            <ul>
+                {{#each units}}
+                    <li class="element_item">
+                        <div>
+                            <div>
+                                <div class="line">
+                                    <!-- <circle cx="12" cy="12" r="8"></circle> -->
+                                    <div class="name">{{unitName}}</div>
+                                    <svg class="building_img">
+                                        <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"></path>
+                                    </svg> 
+                                </div>
+                            </div>
+                            <div class="line_select line_select_unit">
+                                <div class="room_parameters">
+                                    <div class="room_parameter_item">
+                                        <div>Площадь</div>
+                                        <div>{{area}}<span>м</span><span>2</span></div>
+                                    </div>
+                                    <div class="room_parameter_item">
+                                        <div>Спальни</div>
+                                        <div>{{bedroomsNumber}}</div>
+                                    </div>
+                                    <div class="room_parameter_item">
+                                        <div>Этаж</div>
+                                        <div>{{floor}}</div>
+                                    </div>
+                                </div>
+                                <button class="btn_select btn_select_unit">
+                                    <a href="./packages">
+                                        <svg class="svg_select_unit">
+                                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+                                        </svg> 
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>Нет квартир</p>
+        {{/if}}
+    </div>
+</main>

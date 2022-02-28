@@ -1,0 +1,36 @@
+<main>
+    <div class="wrapper">
+        <div>
+            <div>Выбор для всей квартиры</div>
+            {{#each unitsParameters}}
+                <div>
+                    <div>
+                        <img src="{{urlAttributeImage}}" alt="{{urlAttributeImage}}">
+                    </div>
+                    <div>{{nameRoomParameter}}</div>
+                    <div>{{valueRoomParameter}}</div>
+                    <div></div>
+                </div>
+            {{/each}}
+        </div>
+        {{#each rooms}}
+            <div>
+                <div>{{roomName}}</div>
+                {{#each roomParameters}}
+                    <div>
+                        <div>
+                            <img src="{{urlAttributeImage}}" alt="{{urlAttributeImage}}">
+                        </div>
+                        <div>{{nameRoomParameter}}</div>
+                        <div>{{valueRoomParameter}}</div>
+                        <div></div>
+                    </div>
+                {{/each}}
+            </div>
+        {{/each}}
+        <button>Выбрать пользователя</button>
+        <button>
+            <a href="/finish">Завершить</a>
+        </button>
+    </div>
+</main>

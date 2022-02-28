@@ -1,0 +1,45 @@
+<main>
+    <div class="wrapper">
+        {{> search}}
+        {{#if projects.length}}
+            <ul class="projects">
+            {{#each projects}}
+                <li class="element_item project_item">
+                    <div class="project">
+                        <div class="line line_project_name">
+                            <div class="project_name">
+                                <div>
+                                    <svg>
+                                        <circle cx="12" cy="12" r="8"></circle>
+                                    </svg>
+                                </div>
+                                 <div class="project_name_text">{{dataValues.name}}</div>
+                            </div>
+                            <svg class="building_img">
+                                <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"></path>
+                            </svg>
+                        </div>
+                        <div class="line_select line_select_project">
+                            <button class="btn_select btn_select_project">
+                                {{!-- <a href="./queues/{{dataValues.id}}"> --}}
+                                <a href="./queues">
+                                    <svg class="svg_select svg_select_project">
+                                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+                                    </svg> 
+                                </a>
+                            </button>
+                        </div>
+                    </div> 
+                </li>
+            {{/each}}
+            </ul>
+        {{else}}
+            <p>Нет проектов</p>
+        {{/if}}
+        <form action="POST">
+            <input type="text" id="name">
+            <input type="text" id="code">
+            <button type="submit">Добавить проект</button>
+        </form>
+    </div>
+</main>

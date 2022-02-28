@@ -1,0 +1,111 @@
+<header>
+    <div class="up_header_panel">
+        <div class="previous_panel">
+            {{#if urlPreviousPage}}
+                <button class="btn_previous">
+                    <a href={{urlPreviousPage}}>
+                        <svg class="svg_previous">
+                            <path d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"></path>
+                        </svg>
+                    </a>
+                </button>
+            {{/if}}
+            {{#if isDisplayUnitInfos}}
+                <button class="btn_room_name_header">
+                    <div class="selected_room_name">
+                        <div>Квартира MG3-3-N1.002</div>
+                        <svg>
+                            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>   
+                        </svg>
+                    </div>
+                </button>
+                {{!-- <div class="room_infos_modal">
+                    <div>
+                        <div class="room_parameter_name">Объект</div>
+                        <div class="room_parameter_value">MG3-3</div>
+                    </div>
+                    <div>
+                        <div class="room_parameter_name">Площадь</div>
+                        <div  class="room_parameter_value">48.54 м2</div>
+                    </div>
+                    <div>
+                        <div class="room_parameter_name">Этаж</div>
+                        <div  class="room_parameter_value">1</div>
+                    </div>
+                    <div>
+                        <div class="room_parameter_name">Спальни</div>
+                        <div  class="room_parameter_value">1</div>
+                    </div>
+                    <div>
+                        <div class="room_parameter_name">Цена</div>
+                        <div  class="room_parameter_value">0р</div>
+                    </div>
+                </div> --}}
+            {{/if}}
+        </div>
+
+        <img class="logo_img" src="icons/bonava-logo.svg" alt="logo">
+        <button class="btn_user_menu">
+            <svg>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>   
+            </svg>
+        </button>
+        <div class="user-menu">
+            <ul>
+                <li class="user-item-text">
+                    <button>
+                        <a href="/auth/login">Войти</a>
+                    </button> 
+                </li>
+                <li class="user-item-text">
+                    <button>
+                        <a href="/">Создать заявку</a>
+                    </button> 
+                </li>
+                <li class="user-item-text">
+                    <button>
+                        <a href="/requests">Заявки</a>
+                    </button> 
+                </li>
+                <li class="user-item-text">
+                    <button>
+                        <a href="/">Админ</a>
+                    </button> 
+                </li>
+                <li class="user-item-text">
+                    <button>
+                        <a href="/">Выйти</a>
+                    </button> 
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="progress_menu_wrapper">
+        <ul class="progress_menu_items">
+            {{#if isStageSelectUnit}}
+                <li><div class="active_item progress_menu_item_text">Выбор квартиры</div></li>
+            {{else}}
+                <li><div class="progress_menu_item_text">Выбор квартиры</div></li>
+            {{/if}}
+
+            {{#if isStageSelectPackages}}
+                <li><div class="active_item progress_menu_item_text">Выбор пакета</div></li>
+            {{else}}
+                <li><div class="progress_menu_item_text">Выбор пакета</div></li>
+            {{/if}}
+
+            {{#if isStageSelectMaterials}}
+                <li><div class="active_item progress_menu_item_text">Выбор материалов</div></li>
+            {{else}}
+                <li><div class="progress_menu_item_text">Выбор материалов</div></li>
+            {{/if}}
+
+            {{#if isStageFinish}}
+                <li><div class="active_item progress_menu_item_text">Просмотр и завершение</div></li>
+            {{else}}
+                <li><div class="progress_menu_item_text">Просмотр и завершение</div></li>
+            {{/if}}
+        </ul>
+    </div>
+</header>
